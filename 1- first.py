@@ -13,31 +13,17 @@
 
 even_num = [] 
 odd_num = []
+star_num = int(input("Enter start number: "))
+end_num = int(input("Enter end number: "))
 
-for x in range(50):
-    if x%2==0 :
+for x in range(star_num, end_num+1):
+    if x%2 == 0 :
         even_num.append(x)
     
     else:
         odd_num.append(x)
 
 
-print(f"evenNumbers : {even_num}")
-print(f"oddNumbers : {odd_num}")
+print(f"Even Numbers List : {even_num}")
+print(f"Odd Numbers List : {odd_num}")
 
-
-
-# nums = list(input("enter the numbers: ")) # get from user list of intger
-# even_num = [] 
-# odd_num = []
-
-# for x in :
-#     if x%2==0 :
-#         even_num.append(x)
-    
-#     else:
-#         odd_num.append(x)
-
-
-# print(f"evenNumbers : {even_num}")
-# print(f"oddNumbers : {odd_num}")
