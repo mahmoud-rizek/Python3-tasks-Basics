@@ -1,64 +1,48 @@
 class Game:
+    def __init__(self) -> None:
+        while True:
+            choice = int(input('''        
+                Weclome in our Game
+                we have fife Games
+                Enter the game's number for play
+                1:Even Numbers & Odd Numbers
+                2:Counter to tell you how many word at the sentence
+                3:Enter number to tell you range  form zero to this number
+                4:Enter two numbers and tell u if equal or not
+                5:Enter two numbers to tell you the even and odd numbers betwen them
+                Enter number's game:
+                '''))
+            if choice in (1,2,3,4,5):
+                if choice == 1:
+                    start_num = int(input("Enter start number: "))
+                    end_num = int(input("Enter end number: "))
+                    self.first(start_num , end_num)
 
-    choice = int(input('''        
-        Weclome in our Game
-        we have fife Games
-        Enter the game's number for play
-        1:Even Numbers & Odd Numbers
-        2:Counter to tell you how many word at the sentence
-        3:Enter number to tell you range  form zero to this number
-        4:Enter two numbers and tell u if equal or not
-        5:Enter two numbers to tell you the even and odd numbers betwen them
-        Enter number's game:
-        '''))
-    
-    if choice == 1:
-        start_num = int(input("Enter start number: "))
-        end_num = int(input("Enter end number: "))
-        self.first(start_num , end_num)
+                elif choice == 2 :
+                    sentance = input("Enter the sentance: ")
+                    self.second()
 
-    elif choice == 2 :
-        sentance = input("Enter the sentance: ")
-        self.second()
+                elif choice == 3 :
+                    num = int(input("Enter the number: "))
+                    self.third()
 
-    elif choice == 3 :
-        num = int(input("Enter the number: "))
-        self.third()
+                elif choice == 4 :
+                    num1 = int(input("Enter first number: "))
+                    num2 = int(input("Enter second number: "))
+                    self.fourth(num1 , num2)
 
-    elif choice == 4 :
-        num1 = int(input("Enter first number: "))
-        num2 = int(input("Enter second number: "))
-        self.fourth(num1 , num2)
-
-    elif choice == 5 :
-        number1 = int(input("Enter first number: "))
-        number2 = int(input("Enter second number: "))
-        self.fifth(number1 , number2)
-    else:
-        print("your choice is wrong")
-    
-
-    # def userChoice():
-    #     while True:
-    #         paly = input("Enter y for paly agin and X for exit: ")
-    #         if paly == 'y':
-    #             User = int(input("Number of the game: "))
-    #             if User == 1:
-    #                 self.frist()
-    #             elif User == 2:
-    #                 self.second()
-    #             elif User == 3:
-    #                 self.thierd()
-    #             elif User == 4:
-    #                 self.fourth()
-    #             elif User == 5:
-    #                 self.fifth()
-    #             else:
-    #                 print("Type i number 0 to exit or range 1->5")
-    #                 continue
-    #         elif paly == 'x':
-    #             print("Tanks....")
-    #             break
+                elif choice == 5 :
+                    number1 = int(input("Enter first number: "))
+                    number2 = int(input("Enter second number: "))
+                    self.fifth(number1 , number2)
+                else:
+                    print("your choice is wrong")
+                
+                play_again = input("Press any key to play again or N exit: ")
+                if play_again == "n":
+                    break
+            else:
+                print("wrong choice ,please try again")
     
     def first(self, start_num, end_num):
         even_num = [] 
@@ -94,9 +78,11 @@ class Game:
 
 
     def fifth(self , number1 , number2):
+        numbers = []
         for i in range(101):
             if i%number1==0 or i%number2==0:
-                print(i)
+                numbers.append(i)
+        print(numbers)
 
 
 g = Game()
