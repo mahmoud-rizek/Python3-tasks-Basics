@@ -1,10 +1,9 @@
 sentance = input("Enter the sentance: ")
+
 def count_words(sentance):
-    words_list =sentance.split(" ")    
-    result = len(dict.fromkeys(words_list))
+    result = len(sentance.split(" ") )
 
     return result
-
 
 print(count_words(sentance))
 
